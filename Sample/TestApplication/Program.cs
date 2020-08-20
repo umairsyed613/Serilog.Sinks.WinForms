@@ -26,8 +26,8 @@ namespace TestApplication
         private static void ConfigureSerilog()
         {
             Log.Logger = new LoggerConfiguration()
-                        .WriteTo.Sink(WindFormsSink.WinFormsTextBoxJsonSink)
-                        .WriteTo.Sink(WindFormsSink.WinFormsTextBoxSimpleSink)
+                        .WriteTo.Sink(WindFormsSink.JsonTextBoxSink)
+                        .WriteTo.Sink(WindFormsSink.SimpleTextBoxSink)
                         .CreateLogger();
         }
     }

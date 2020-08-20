@@ -24,11 +24,11 @@ namespace Serilog.WinForms
             TxtLogControl.Padding = LogPadding;
             TxtLogControl.ReadOnly = ReadOnly;
             TxtLogControl.BorderStyle = LogBorderStyle;
-            WindFormsSink.WinFormsTextBoxSimpleSink.OnLogReceived += WinFormsTextBoxSimpleSinkOnLogReceived;
+            WindFormsSink.SimpleTextBoxSink.OnLogReceived += SimpleTextBoxSinkOnLogReceived;
             
         }
 
-        private void WinFormsTextBoxSimpleSinkOnLogReceived(string str)
+        private void SimpleTextBoxSinkOnLogReceived(string str)
         {
             if (this.InvokeRequired)
             {

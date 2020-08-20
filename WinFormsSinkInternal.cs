@@ -38,7 +38,7 @@ namespace Serilog.WinForms
 
     public static class WindFormsSink
     {
-        public static readonly WinFormsSinkInternal WinFormsTextBoxSimpleSink = new WinFormsSinkInternal(new MessageTemplateTextFormatter("{Timestamp} [{Level}] {Message} {Exception}"));
-        public static readonly WinFormsSinkInternal WinFormsTextBoxJsonSink = new WinFormsSinkInternal(new JsonFormatter());
+        public static readonly WinFormsSinkInternal SimpleTextBoxSink = new WinFormsSinkInternal(new MessageTemplateTextFormatter("{Timestamp} [{Level}] {Message} {Exception}"));
+        public static readonly WinFormsSinkInternal JsonTextBoxSink = new WinFormsSinkInternal(new JsonFormatter());
     }
 }
