@@ -4,7 +4,7 @@ Writes [Serilog](https://serilog.net) events to Winforms TextBox control from an
 
 ### Getting started
 
-Install the [Serilog.WinForms](https://www.nuget.org/packages/Serilog.Sinks.File/) package from NuGet:
+Install the [Serilog.WinForms](https://www.nuget.org/packages/Serilog.WinForms/) package from NuGet:
 
 ```powershell
 Install-Package Serilog.WinForms
