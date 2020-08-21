@@ -31,4 +31,4 @@ Log.Logger = new LoggerConfiguration()
 
 Find the sample running application [here](https://github.com/umairsyed613/Serilog.WinForms/tree/master/Sample/TestApplication/)
 
-![Sample](sample.gif)
+![Sample](https://github.com/umairsyed613/Serilog.WinForms/blob/master/sample.gif)
