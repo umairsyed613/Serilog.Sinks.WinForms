@@ -1,4 +1,6 @@
-# Serilog.WinForms
+# Serilog.WinForms 
+
+[![NuGet version](https://badge.fury.io/nu/Serilog.WinForms.svg)](https://badge.fury.io/nu/Serilog.WinForms) ![Nuget](https://img.shields.io/nuget/dt/Serilog.WinForms)
 
 Writes [Serilog](https://serilog.net) events to Winforms TextBox control from anywhere in your application.
 
