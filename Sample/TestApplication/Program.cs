@@ -20,7 +20,7 @@ namespace TestApplication
             ConfigureSerilog();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new MasterForm());
         }
 
         private static void ConfigureSerilog()
