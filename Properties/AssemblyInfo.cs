@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Serilog.WinForms")]
+[assembly: AssemblyTitle("Serilog.Sinks.WinForms")]
 [assembly: AssemblyDescription("Writes Serilog events to Winforms TextBox control from anywhere in your application.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Serilog.WinForms")]
+[assembly: AssemblyProduct("Serilog.Sinks.WinForms")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

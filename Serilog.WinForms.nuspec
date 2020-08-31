@@ -7,7 +7,7 @@
     <authors>UmairSyed (@umairsyed613)</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">MIT</license>
-    <projectUrl>https://github.com/umairsyed613/Serilog.WinForms</projectUrl>
+    <projectUrl>https://github.com/umairsyed613/Serilog.Sinks.WinForms</projectUrl>
     <!-- <iconUrl>http://icon_url_here_or_delete_this_line/</iconUrl> -->
     <description>Writes Serilog events to Winforms TextBox control from anywhere in your application.</description>
     <releaseNotes>Writes Serilog events to Winforms TextBox control</releaseNotes>
