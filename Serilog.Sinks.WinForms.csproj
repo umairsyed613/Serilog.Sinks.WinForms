@@ -7,8 +7,8 @@
     <ProjectGuid>{E6E8355A-DC58-45B7-BBD3-8132610F5EBF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Serilog.WinForms</RootNamespace>
-    <AssemblyName>Serilog.WinForms</AssemblyName>
+    <RootNamespace>Serilog.Sinks.WinForms</RootNamespace>
+    <AssemblyName>Serilog.Sinks.WinForms</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
