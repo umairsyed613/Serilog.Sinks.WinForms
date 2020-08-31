@@ -1,2 +1,2 @@
 language: csharp
-solution: Serilog.WinForms.sln
+solution: Serilog.Sinks.WinForms.sln
