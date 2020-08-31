@@ -102,9 +102,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Serilog.WinForms.csproj">
+    <ProjectReference Include="..\..\Serilog.Sinks.WinForms.csproj">
       <Project>{e6e8355a-dc58-45b7-bbd3-8132610f5ebf}</Project>
-      <Name>Serilog.WinForms</Name>
+      <Name>Serilog.Sinks.WinForms</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

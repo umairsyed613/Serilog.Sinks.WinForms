@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using Serilog;
-using Serilog.WinForms;
+using Serilog.Sinks.WinForms;
 
 namespace TestApplication
 {

@@ -1,4 +1,4 @@
-﻿namespace Serilog.WinForms
+﻿namespace Serilog.Sinks.WinForms
 {
     partial class SimpleLogTextBox
     {

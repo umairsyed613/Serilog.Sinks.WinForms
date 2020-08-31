@@ -34,8 +34,8 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.jsonLogTextBox1 = new Serilog.WinForms.JsonLogTextBox();
-            this.simpleLogTextBox1 = new Serilog.WinForms.SimpleLogTextBox();
+            this.jsonLogTextBox1 = new Serilog.Sinks.WinForms.JsonLogTextBox();
+            this.simpleLogTextBox1 = new Serilog.Sinks.WinForms.SimpleLogTextBox();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -139,7 +139,7 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private Serilog.WinForms.JsonLogTextBox jsonLogTextBox1;
-        private Serilog.WinForms.SimpleLogTextBox simpleLogTextBox1;
+        private Serilog.Sinks.WinForms.JsonLogTextBox jsonLogTextBox1;
+        private Serilog.Sinks.WinForms.SimpleLogTextBox simpleLogTextBox1;
     }
 }
