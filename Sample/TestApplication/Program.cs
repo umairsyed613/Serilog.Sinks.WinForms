@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using Serilog;
@@ -26,8 +23,8 @@ namespace TestApplication
         private static void ConfigureSerilog()
         {
             Log.Logger = new LoggerConfiguration()
-                        .WriteTo.Sink(WindFormsSink.JsonTextBoxSink)
-                        .WriteTo.Sink(WindFormsSink.SimpleTextBoxSink)
+                        .WriteToSimpleTextBox()
+                        .WriteToJsonTextBox()
                         .CreateLogger();
         }
     }

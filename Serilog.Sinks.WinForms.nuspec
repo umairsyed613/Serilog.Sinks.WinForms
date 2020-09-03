@@ -8,10 +8,10 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">MIT</license>
     <projectUrl>https://github.com/umairsyed613/Serilog.Sinks.WinForms</projectUrl>
-    <!-- <iconUrl>http://icon_url_here_or_delete_this_line/</iconUrl> -->
-    <description>Writes Serilog events to Winforms TextBox control from anywhere in your application.</description>
-    <releaseNotes>Writes Serilog events to Winforms TextBox control</releaseNotes>
+	<repository type="git" url="https://github.com/umairsyed613/Serilog.Sinks.WinForms" />
+    <description>Writes Serilog events to Windows Forms Application TextBox control from anywhere in your application.</description>
+    <releaseNotes>Writes Serilog events to Windows Forms Application TextBox control</releaseNotes>
     <copyright>$copyright$</copyright>
-    <tags>Serilog WindowsForms WinForm WinForms SerilogSink Sink</tags>
+    <tags>Serilog WindowsForms WinForm WinForms SerilogSink Sink Windows Forms Application</tags>
   </metadata>
 </package>
