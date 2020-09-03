@@ -1,6 +1,6 @@
 # Serilog.Sinks.WinForms
 
-[![NuGet version](https://badge.fury.io/nu/Serilog.WinForms.svg)](https://badge.fury.io/nu/Serilog.WinForms) ![Build Status](https://travis-ci.org/umairsyed613/Serilog.Sinks.WinForms.svg?branch=master) ![Nuget](https://img.shields.io/nuget/dt/Serilog.Sinks.WinForms)
+[![NuGet version](https://badge.fury.io/nu/Serilog.Sinks.WinForms.png)](https://badge.fury.io/nu/Serilog.Sinks.WinForms) ![Build Status](https://travis-ci.org/umairsyed613/Serilog.Sinks.WinForms.svg?branch=master) [![Nuget](https://img.shields.io/nuget/dt/Serilog.Sinks.WinForms)](https://www.nuget.org/packages/Serilog.Sinks.WinForms)
 
 Writes [Serilog](https://serilog.net) events to Winforms TextBox control from anywhere in your application.
 
