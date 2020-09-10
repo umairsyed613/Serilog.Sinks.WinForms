@@ -33,7 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>serilog-sink-nuget.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <PackageIcon>serilog-sink-nuget.png</PackageIcon>
@@ -75,10 +76,6 @@
     <EmbeddedResource Include="SimpleLogTextBox.resx">
       <DependentUpon>SimpleLogTextBox.cs</DependentUpon>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="assets\serilog-sink-nuget.png" Pack="true" PackagePath="\" />
-    <Content Include="serilog-sink-nuget.ico" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
