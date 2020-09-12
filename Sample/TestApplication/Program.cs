@@ -23,8 +23,9 @@ namespace TestApplication
         private static void ConfigureSerilog()
         {
             Log.Logger = new LoggerConfiguration()
-                        .WriteToSimpleTextBox()
+                        .WriteToGridView()
                         .WriteToJsonTextBox()
+                        .WriteToSimpleTextBox()
                         .CreateLogger();
         }
     }

@@ -25,7 +25,6 @@ namespace Serilog.Sinks.WinForms
             TxtLogControl.ReadOnly = ReadOnly;
             TxtLogControl.BorderStyle = LogBorderStyle;
             WindFormsSink.JsonTextBoxSink.OnLogReceived += JsonTextBoxSinkOnLogReceived;
-            
         }
 
         private void JsonTextBoxSinkOnLogReceived(string str)

@@ -21,5 +21,15 @@
         {
             return configuration.WriteTo.Sink(WindFormsSink.JsonTextBoxSink);
         }
+
+        /// <summary>
+        /// Write the logs directly to Data Grid View. GridLog control can be used from toolbox
+        /// </summary>
+        /// <param name="configuration"></param>
+        /// <returns></returns>
+        public static LoggerConfiguration WriteToGridView(this LoggerConfiguration configuration)
+        {
+            return configuration.WriteTo.Sink(WindFormsSink.GridLogSink);
+        }
     }
 }

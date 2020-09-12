@@ -34,8 +34,9 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.jsonLogTextBox1 = new Serilog.Sinks.WinForms.JsonLogTextBox();
-            this.simpleLogTextBox1 = new Serilog.Sinks.WinForms.SimpleLogTextBox();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -60,7 +61,10 @@
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
-            this.toolStripButton2});
+            this.toolStripSeparator1,
+            this.toolStripButton2,
+            this.toolStripSeparator2,
+            this.toolStripButton3});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1008, 25);
@@ -87,37 +91,31 @@
             this.toolStripButton2.Text = "Form2";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
-            // jsonLogTextBox1
+            // toolStripButton3
             // 
-            this.jsonLogTextBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.jsonLogTextBox1.Location = new System.Drawing.Point(0, 549);
-            this.jsonLogTextBox1.LogBorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.jsonLogTextBox1.LogPadding = new System.Windows.Forms.Padding(3);
-            this.jsonLogTextBox1.Name = "jsonLogTextBox1";
-            this.jsonLogTextBox1.ReadOnly = true;
-            this.jsonLogTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.jsonLogTextBox1.Size = new System.Drawing.Size(1008, 158);
-            this.jsonLogTextBox1.TabIndex = 3;
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(66, 22);
+            this.toolStripButton3.Text = "LogViewer";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
-            // simpleLogTextBox1
+            // toolStripSeparator1
             // 
-            this.simpleLogTextBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.simpleLogTextBox1.Location = new System.Drawing.Point(0, 382);
-            this.simpleLogTextBox1.LogBorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.simpleLogTextBox1.LogPadding = new System.Windows.Forms.Padding(3);
-            this.simpleLogTextBox1.Name = "simpleLogTextBox1";
-            this.simpleLogTextBox1.ReadOnly = true;
-            this.simpleLogTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.simpleLogTextBox1.Size = new System.Drawing.Size(1008, 167);
-            this.simpleLogTextBox1.TabIndex = 4;
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // MasterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 729);
-            this.Controls.Add(this.simpleLogTextBox1);
-            this.Controls.Add(this.jsonLogTextBox1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip1);
             this.IsMdiContainer = true;
@@ -139,7 +137,8 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private Serilog.Sinks.WinForms.JsonLogTextBox jsonLogTextBox1;
-        private Serilog.Sinks.WinForms.SimpleLogTextBox simpleLogTextBox1;
+        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
     }
 }

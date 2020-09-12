@@ -45,11 +45,19 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GridLog.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GridLog.Designer.cs">
+      <DependentUpon>GridLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GridLogEvent.cs" />
     <Compile Include="JsonLogTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -70,6 +78,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GridLog.resx">
+      <DependentUpon>GridLog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="JsonLogTextBox.resx">
       <DependentUpon>JsonLogTextBox.cs</DependentUpon>
     </EmbeddedResource>

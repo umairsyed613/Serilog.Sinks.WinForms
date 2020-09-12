@@ -24,5 +24,17 @@ namespace TestApplication
         {
             Log.Information(textBox1.Text);
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                throw new Exception("Throwing exception from Form2");
+            }
+            catch (Exception exception)
+            {
+                Log.Error(exception, "Error Happened in Form2");
+            }
+        }
     }
 }

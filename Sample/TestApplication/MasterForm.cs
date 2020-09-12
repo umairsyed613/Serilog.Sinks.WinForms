@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,9 +13,15 @@ namespace TestApplication
 {
     public partial class MasterForm : Form
     {
+
+        private LogVieweer LogViewer;
+
         public MasterForm()
         {
             InitializeComponent();
+
+            LogViewer = new LogVieweer();
+            LogViewer.MdiParent = this;
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -29,6 +36,11 @@ namespace TestApplication
             var form2 = new Form2();
             form2.MdiParent = this;
             form2.Show();
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            LogViewer.Show();
         }
     }
 }

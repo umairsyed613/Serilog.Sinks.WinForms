@@ -35,12 +35,12 @@ namespace Serilog.Sinks.WinForms
                 this.Invoke(
                     (MethodInvoker)delegate
                         {
-                            TxtLogControl.AppendText(str);
+                            TxtLogControl.AppendText(str + Environment.NewLine);
                         });
             }
             else
             {
-                TxtLogControl.AppendText(str);
+                TxtLogControl.AppendText(str + Environment.NewLine);
             }
         }
     }
