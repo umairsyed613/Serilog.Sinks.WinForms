@@ -9,8 +9,8 @@
     <license type="expression">MIT</license>
     <projectUrl>https://github.com/umairsyed613/Serilog.Sinks.WinForms</projectUrl>
 	<repository type="git" url="https://github.com/umairsyed613/Serilog.Sinks.WinForms" />
-    <description>Writes Serilog events to Windows Forms Application TextBox control from anywhere in your application.</description>
-    <releaseNotes>Writes Serilog events to Windows Forms Application TextBox control</releaseNotes>
+    <description>Writes Serilog events to Windows Forms Application TextBox or Datagridview control from anywhere in your application.</description>
+    <releaseNotes>Datagridview control added. read documentation for configuration</releaseNotes>
     <copyright>$copyright$</copyright>
     <tags>Serilog WindowsForms WinForm WinForms SerilogSink Sink Windows Forms Application</tags>
   </metadata>
