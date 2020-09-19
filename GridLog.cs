@@ -12,6 +12,8 @@ namespace Serilog.Sinks.WinForms
 
         private void GridLog_Load(object sender, EventArgs e)
         {
+            LogGridView.Font = this.Font;
+
             WindFormsSink.GridLogSink.OnGridLogReceived += GridLogSink_OnGridLogReceived;
         }
 

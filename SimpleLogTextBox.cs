@@ -24,6 +24,7 @@ namespace Serilog.Sinks.WinForms
             TxtLogControl.Padding = LogPadding;
             TxtLogControl.ReadOnly = ReadOnly;
             TxtLogControl.BorderStyle = LogBorderStyle;
+            TxtLogControl.Font = this.Font;
             WindFormsSink.SimpleTextBoxSink.OnLogReceived += SimpleTextBoxSinkOnLogReceived;
             
         }
