@@ -31,6 +31,8 @@ namespace Serilog.Sinks.WinForms
             {
                 LogGridView.Rows.Add(logEvent.TimeStamp.ToString(), logEvent.Level, logEvent.Message);
             }
+
+            Application.DoEvents();
         }
     }
 }

@@ -13,6 +13,7 @@ namespace Serilog.Sinks.WinForms
 
         public BorderStyle LogBorderStyle { get; set; } = BorderStyle.Fixed3D;
 
+
         public SimpleLogTextBox()
         {
             InitializeComponent();
@@ -25,6 +26,8 @@ namespace Serilog.Sinks.WinForms
             TxtLogControl.ReadOnly = ReadOnly;
             TxtLogControl.BorderStyle = LogBorderStyle;
             TxtLogControl.Font = this.Font;
+            TxtLogControl.ForeColor = this.ForeColor;
+            TxtLogControl.BackColor = this.BackColor;
             WindFormsSink.SimpleTextBoxSink.OnLogReceived += SimpleTextBoxSinkOnLogReceived;
             
         }
@@ -43,6 +46,8 @@ namespace Serilog.Sinks.WinForms
             {
                 TxtLogControl.AppendText(str + Environment.NewLine);
             }
+
+            Application.DoEvents();
         }
     }
 }
