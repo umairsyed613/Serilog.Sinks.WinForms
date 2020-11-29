@@ -10,7 +10,7 @@
     <projectUrl>https://github.com/umairsyed613/Serilog.Sinks.WinForms</projectUrl>
 	<repository type="git" url="https://github.com/umairsyed613/Serilog.Sinks.WinForms" />
     <description>Writes Serilog events to Windows Forms Application TextBox or Datagridview control from anywhere in your application.</description>
-    <releaseNotes>Font and size can be configured now, packages updated to latest</releaseNotes>
+    <releaseNotes>Read Docs at https://github.com/umairsyed613/Serilog.Sinks.WinForms</releaseNotes>
     <copyright>$copyright$</copyright>
     <tags>Serilog WindowsForms WinForm WinForms SerilogSink Sink Windows Forms Application</tags>
   </metadata>
