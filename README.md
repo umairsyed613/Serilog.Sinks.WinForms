@@ -24,6 +24,14 @@ Log.Logger = new LoggerConfiguration()
                         .CreateLogger();
 ```
 
+SimpleLogTextBox with custom Configuration. SimpleLogTextBox accepts [ITextFormatter](https://github.com/serilog/serilog/blob/dev/src/Serilog/Formatting/ITextFormatter.cs)
+
+```csharp
+Log.Logger = new LoggerConfiguration()
+                        .WriteToSimpleTextBox(new MessageTemplateTextFormatter("{Timestamp} [{Level}] {Message} {Exception}"))
+                        .CreateLogger();
+```
+
 ##### Json Formatted Log
 
 JsonLogTextBox can be used from visual studio toolbox once the package is added to the project.
@@ -31,6 +39,14 @@ JsonLogTextBox can be used from visual studio toolbox once the package is added 
 ```csharp
 Log.Logger = new LoggerConfiguration()
                         .WriteToJsonTextBox()
+                        .CreateLogger();
+```
+
+JsonLogTextBox with custom Configuration. JsonLogTextBox accepts [ITextFormatter](https://github.com/serilog/serilog/blob/dev/src/Serilog/Formatting/ITextFormatter.cs)
+
+```csharp
+Log.Logger = new LoggerConfiguration()
+                        .WriteToSimpleTextBox(new JsonFormatter())
                         .CreateLogger();
 ```
 

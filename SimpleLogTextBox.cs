@@ -29,7 +29,6 @@ namespace Serilog.Sinks.WinForms
             TxtLogControl.ForeColor = this.ForeColor;
             TxtLogControl.BackColor = this.BackColor;
             WindFormsSink.SimpleTextBoxSink.OnLogReceived += SimpleTextBoxSinkOnLogReceived;
-            
         }
 
         private void SimpleTextBoxSinkOnLogReceived(string str)

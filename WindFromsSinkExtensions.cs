@@ -1,4 +1,6 @@
-﻿namespace Serilog.Sinks.WinForms
+﻿using Serilog.Formatting;
+
+namespace Serilog.Sinks.WinForms
 {
     public static class WindFromsSinkExtensions
     {
@@ -7,9 +9,9 @@
         /// </summary>
         /// <param name="configuration"></param>
         /// <returns></returns>
-        public static LoggerConfiguration WriteToSimpleTextBox(this LoggerConfiguration configuration)
+        public static LoggerConfiguration WriteToSimpleTextBox(this LoggerConfiguration configuration, ITextFormatter formatter = null)
         {
-            return configuration.WriteTo.Sink(WindFormsSink.SimpleTextBoxSink);
+            return configuration.WriteTo.Sink(WindFormsSink.MakeSimpleTextBoxSink(formatter));
         }
 
         /// <summary>
@@ -17,9 +19,9 @@
         /// </summary>
         /// <param name="configuration"></param>
         /// <returns></returns>
-        public static LoggerConfiguration WriteToJsonTextBox(this LoggerConfiguration configuration)
+        public static LoggerConfiguration WriteToJsonTextBox(this LoggerConfiguration configuration, ITextFormatter formatter = null)
         {
-            return configuration.WriteTo.Sink(WindFormsSink.JsonTextBoxSink);
+            return configuration.WriteTo.Sink(WindFormsSink.MakeJsonTextBoxSink(formatter));
         }
 
         /// <summary>
