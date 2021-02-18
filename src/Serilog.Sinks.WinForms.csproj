@@ -73,6 +73,12 @@
       <DependentUpon>SimpleLogTextBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TransparentSimpleLogTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TransparentSimpleLogTextBox.Designer.cs">
+      <DependentUpon>TransparentSimpleLogTextBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="WindFromsSinkExtensions.cs" />
     <Compile Include="WinFormsSinkInternal.cs" />
   </ItemGroup>
@@ -85,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SimpleLogTextBox.resx">
       <DependentUpon>SimpleLogTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransparentSimpleLogTextBox.resx">
+      <DependentUpon>TransparentSimpleLogTextBox.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
