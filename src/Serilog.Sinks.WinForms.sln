@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApplication", "Sample\T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApplicationWithTransparentBackground", "Sample\TestApplicationWithTransparentBackground\TestApplicationWithTransparentBackground.csproj", "{65D7C21E-45EC-46D3-B489-9CC20EFFF13F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomSimpleTextLog", "Sample\CustomSimpleTextLog\CustomSimpleTextLog.csproj", "{151559CF-E59E-4CC1-8CDB-FF56882F9035}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{65D7C21E-45EC-46D3-B489-9CC20EFFF13F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65D7C21E-45EC-46D3-B489-9CC20EFFF13F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65D7C21E-45EC-46D3-B489-9CC20EFFF13F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{151559CF-E59E-4CC1-8CDB-FF56882F9035}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{151559CF-E59E-4CC1-8CDB-FF56882F9035}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{151559CF-E59E-4CC1-8CDB-FF56882F9035}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{151559CF-E59E-4CC1-8CDB-FF56882F9035}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -36,6 +42,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{9128AF8C-2E4B-486E-AEF2-F48DE2F61B09} = {6FCBC6FF-1028-4DFA-8E0E-F5FC33A915CC}
 		{65D7C21E-45EC-46D3-B489-9CC20EFFF13F} = {6FCBC6FF-1028-4DFA-8E0E-F5FC33A915CC}
+		{151559CF-E59E-4CC1-8CDB-FF56882F9035} = {6FCBC6FF-1028-4DFA-8E0E-F5FC33A915CC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0A92E9B0-A616-4F29-AA90-DD1EC0F0BF60}
