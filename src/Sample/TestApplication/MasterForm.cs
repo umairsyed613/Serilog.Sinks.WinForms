@@ -13,7 +13,6 @@ namespace TestApplication
 {
     public partial class MasterForm : Form
     {
-
         private LogVieweer LogViewer;
 
         public MasterForm()
@@ -41,6 +40,13 @@ namespace TestApplication
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
             LogViewer.Show();
+        }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            var r = new RichTextBoxLogControlForm();
+            r.MdiParent = this;
+            r.Show();
         }
     }
 }

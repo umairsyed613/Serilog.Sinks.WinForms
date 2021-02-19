@@ -79,6 +79,12 @@
     <Compile Include="TransparentSimpleLogTextBox.Designer.cs">
       <DependentUpon>TransparentSimpleLogTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="RichTextBoxLogControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RichTextBoxLogControl.Designer.cs">
+      <DependentUpon>RichTextBoxLogControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="WindFromsSinkExtensions.cs" />
     <Compile Include="WinFormsSinkInternal.cs" />
   </ItemGroup>
