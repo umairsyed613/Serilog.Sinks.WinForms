@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Serilog.Sinks.WinForms
@@ -22,10 +15,17 @@ namespace Serilog.Sinks.WinForms
         {
             if (this.InvokeRequired)
             {
-                this.Invoke(
-                    (MethodInvoker) delegate { this.AppendText(str + Environment.NewLine); });
+                this.Invoke((MethodInvoker)delegate
+                {
+                    this.AppendText(str);
+                    this.ScrollToCaret();
+                });
             }
-            else { this.AppendText(str + Environment.NewLine); }
+            else
+            {
+                this.AppendText(str);
+                this.ScrollToCaret();
+            }
 
             Application.DoEvents();
         }

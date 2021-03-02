@@ -18,7 +18,7 @@ namespace TestApplicationWithTransparentBackground
         static void Main()
         {
             Log.Logger = new LoggerConfiguration()
-                        .WriteToSimpleTextBox()
+                        .WriteToSimpleAndRichTextBox()
                         .CreateLogger();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

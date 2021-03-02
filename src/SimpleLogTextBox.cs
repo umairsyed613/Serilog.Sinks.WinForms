@@ -38,12 +38,14 @@ namespace Serilog.Sinks.WinForms
                 this.Invoke(
                     (MethodInvoker)delegate
                         {
-                            TxtLogControl.AppendText(str + Environment.NewLine);
+                            TxtLogControl.AppendText(str);
+                            TxtLogControl.ScrollToCaret();
                         });
             }
             else
             {
-                TxtLogControl.AppendText(str + Environment.NewLine);
+                TxtLogControl.AppendText(str);
+                TxtLogControl.ScrollToCaret();
             }
 
             Application.DoEvents();

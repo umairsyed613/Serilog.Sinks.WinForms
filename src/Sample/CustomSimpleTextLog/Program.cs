@@ -18,7 +18,7 @@ namespace CustomSimpleTextLog
         static void Main()
         {
             Log.Logger = new LoggerConfiguration()
-                        .WriteToSimpleTextBox()
+                        .WriteToSimpleAndRichTextBox()
                         .CreateLogger();
             
             Application.EnableVisualStyles();

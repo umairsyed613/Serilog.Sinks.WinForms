@@ -25,7 +25,7 @@ namespace TestApplication
             Log.Logger = new LoggerConfiguration()
                         .WriteToGridView()
                         .WriteToJsonTextBox()
-                        .WriteToSimpleTextBox()
+                        .WriteToSimpleAndRichTextBox()
                         .CreateLogger();
         }
     }

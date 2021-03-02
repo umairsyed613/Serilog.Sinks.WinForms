@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+
 using Serilog.Core;
 using Serilog.Events;
 using Serilog.Formatting;
@@ -55,17 +56,19 @@ namespace Serilog.Sinks.WinForms
 
     public static class WindFormsSink
     {
-        private static WinFormsSinkInternal _simpleTextBoxSink = new WinFormsSinkInternal(new MessageTemplateTextFormatter("{Timestamp} [{Level}] {Message} {Exception}"));
+        private static readonly ITextFormatter _defaultTextFormatter = new MessageTemplateTextFormatter("{Timestamp:HH:mm:ss} {Level} {Message:lj}{NewLine}{Exception}");
+
+        private static WinFormsSinkInternal _simpleTextBoxSink = new WinFormsSinkInternal(_defaultTextFormatter);
         public static WinFormsSinkInternal SimpleTextBoxSink => _simpleTextBoxSink;
 
         private static WinFormsSinkInternal _jsonTextBoxSink = new WinFormsSinkInternal(new JsonFormatter());
         public static WinFormsSinkInternal JsonTextBoxSink => _jsonTextBoxSink;
 
-        public static readonly WinFormsSinkInternal GridLogSink = new WinFormsSinkInternal(new MessageTemplateTextFormatter("{Message} {Exception}"), true);
+        public static readonly WinFormsSinkInternal GridLogSink = new WinFormsSinkInternal(new MessageTemplateTextFormatter("{Message}{NewLine}{Exception}"), true);
 
         public static WinFormsSinkInternal MakeSimpleTextBoxSink(ITextFormatter formatter = null)
         {
-            if (formatter == null) { formatter = new MessageTemplateTextFormatter("{Timestamp} [{Level}] {Message} {Exception}"); }
+            if (formatter == null) { formatter = _defaultTextFormatter; }
 
             _simpleTextBoxSink = new WinFormsSinkInternal(formatter);
 

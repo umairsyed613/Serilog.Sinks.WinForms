@@ -42,7 +42,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label1.Location = new System.Drawing.Point(12, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(264, 29);
+            this.label1.Size = new System.Drawing.Size(170, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Simple Textbox Logger";
             // 
@@ -52,7 +52,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label2.Location = new System.Drawing.Point(12, 173);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(239, 29);
+            this.label2.Size = new System.Drawing.Size(156, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "Json Textbox Logger";
             // 
@@ -62,7 +62,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label3.Location = new System.Drawing.Point(12, 325);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(142, 29);
+            this.label3.Size = new System.Drawing.Size(93, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "Grid Logger";
             // 
@@ -80,7 +80,7 @@
             this.jsonLogTextBox1.LogPadding = new System.Windows.Forms.Padding(3);
             this.jsonLogTextBox1.Name = "jsonLogTextBox1";
             this.jsonLogTextBox1.ReadOnly = true;
-            this.jsonLogTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.jsonLogTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.jsonLogTextBox1.Size = new System.Drawing.Size(772, 121);
             this.jsonLogTextBox1.TabIndex = 2;
             // 
@@ -90,6 +90,7 @@
             this.simpleLogTextBox1.Location = new System.Drawing.Point(16, 44);
             this.simpleLogTextBox1.LogBorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.simpleLogTextBox1.LogPadding = new System.Windows.Forms.Padding(3);
+            this.simpleLogTextBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.simpleLogTextBox1.Name = "simpleLogTextBox1";
             this.simpleLogTextBox1.ReadOnly = true;
             this.simpleLogTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;

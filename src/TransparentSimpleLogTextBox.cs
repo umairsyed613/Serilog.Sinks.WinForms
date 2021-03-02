@@ -26,9 +26,17 @@ namespace Serilog.Sinks.WinForms
             if (this.InvokeRequired)
             {
                 this.Invoke(
-                    (MethodInvoker) delegate { this.AppendText(str + Environment.NewLine); });
+                    (MethodInvoker)delegate
+                    {
+                        this.AppendText(str);
+                        this.ScrollToCaret();
+                    });
             }
-            else { this.AppendText(str + Environment.NewLine); }
+            else
+            {
+                this.AppendText(str);
+                this.ScrollToCaret();
+            }
 
             Application.DoEvents();
         }

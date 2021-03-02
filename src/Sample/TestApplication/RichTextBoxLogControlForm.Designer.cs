@@ -30,7 +30,6 @@ namespace TestApplication
         private void InitializeComponent()
         {
             this.richTextBoxLogControl1 = new Serilog.Sinks.WinForms.RichTextBoxLogControl();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // richTextBoxLogControl1
@@ -40,24 +39,16 @@ namespace TestApplication
             this.richTextBoxLogControl1.ForeColor = System.Drawing.Color.Black;
             this.richTextBoxLogControl1.Location = new System.Drawing.Point(12, 21);
             this.richTextBoxLogControl1.Name = "richTextBoxLogControl1";
-            this.richTextBoxLogControl1.Size = new System.Drawing.Size(776, 154);
+            this.richTextBoxLogControl1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.richTextBoxLogControl1.Size = new System.Drawing.Size(776, 417);
             this.richTextBoxLogControl1.TabIndex = 0;
-            this.richTextBoxLogControl1.Text = "test";
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(13, 198);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(775, 225);
-            this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.Text = "test";
+            this.richTextBoxLogControl1.Text = "";
             // 
             // RichTextBoxLogControlForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.richTextBoxLogControl1);
             this.Name = "RichTextBoxLogControlForm";
             this.Text = "RichTextBoxLogControlForm";
@@ -68,6 +59,5 @@ namespace TestApplication
         #endregion
 
         private Serilog.Sinks.WinForms.RichTextBoxLogControl richTextBoxLogControl1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }

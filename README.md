@@ -12,15 +12,15 @@ Install the [Serilog.Sinks.WinForms](https://www.nuget.org/packages/Serilog.Sink
 Install-Package Serilog.Sinks.WinForms
 ```
 
-To configure the sink in C# code, call `WriteToSimpleTextBox()` or `WriteToJsonTextBox()` or `WriteToGridView()` during logger configuration:
+To configure the sink in C# code, call `WriteToSimpleAndRichTextBox()` or `WriteToJsonTextBox()` or `WriteToGridView()` during logger configuration:
 
-##### Simple Text Formatted Log
+##### Simple Text Formatted Log And Rich TextBox Log Control
 
 SimpleLogTextBox can be used from visual studio toolbox once the package is added to the project.
 
 ```csharp
 Log.Logger = new LoggerConfiguration()
-                        .WriteToSimpleTextBox()
+                        .WriteToSimpleAndRichTextBox()
                         .CreateLogger();
 ```
 
@@ -28,7 +28,7 @@ SimpleLogTextBox with custom Configuration. SimpleLogTextBox accepts [ITextForma
 
 ```csharp
 Log.Logger = new LoggerConfiguration()
-                        .WriteToSimpleTextBox(new MessageTemplateTextFormatter("{Timestamp} [{Level}] {Message} {Exception}"))
+                        .WriteToSimpleAndRichTextBox(new MessageTemplateTextFormatter("{Timestamp} [{Level}] {Message} {Exception}"))
                         .CreateLogger();
 ```
 
@@ -46,7 +46,7 @@ JsonLogTextBox with custom Configuration. JsonLogTextBox accepts [ITextFormatter
 
 ```csharp
 Log.Logger = new LoggerConfiguration()
-                        .WriteToSimpleTextBox(new JsonFormatter())
+                        .WriteToJsonTextBox(new JsonFormatter())
                         .CreateLogger();
 ```
 
