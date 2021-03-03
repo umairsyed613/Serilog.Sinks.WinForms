@@ -16,7 +16,7 @@ To configure the sink in C# code, call `WriteToSimpleAndRichTextBox()` or `Write
 
 ##### Simple Text Formatted Log And Rich TextBox Log Control
 
-SimpleLogTextBox can be used from visual studio toolbox once the package is added to the project.
+SimpleLogTextBox or RichTextBoxLogControl can be used from visual studio toolbox once the package is added to the project.
 
 ```csharp
 Log.Logger = new LoggerConfiguration()
@@ -24,7 +24,7 @@ Log.Logger = new LoggerConfiguration()
                         .CreateLogger();
 ```
 
-SimpleLogTextBox with custom Configuration. SimpleLogTextBox accepts [ITextFormatter](https://github.com/serilog/serilog/blob/dev/src/Serilog/Formatting/ITextFormatter.cs)
+SimpleLogTextBox or RichTextBoxLogControl with custom Configuration. SimpleLogTextBox accepts [ITextFormatter](https://github.com/serilog/serilog/blob/dev/src/Serilog/Formatting/ITextFormatter.cs)
 
 ```csharp
 Log.Logger = new LoggerConfiguration()
