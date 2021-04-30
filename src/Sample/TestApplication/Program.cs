@@ -23,6 +23,7 @@ namespace TestApplication
         private static void ConfigureSerilog()
         {
             Log.Logger = new LoggerConfiguration()
+                        .Enrich.FromLogContext()
                         .WriteToGridView()
                         .WriteToJsonTextBox()
                         .WriteToSimpleAndRichTextBox()

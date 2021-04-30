@@ -45,6 +45,9 @@
     <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
       <HintPath>packages\Serilog.2.10.0\lib\net46\Serilog.dll</HintPath>
     </Reference>
+    <Reference Include="Serilog.Sinks.WinForms, Version=2.2.6.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>bin\Debug\Serilog.Sinks.WinForms.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
@@ -65,6 +68,12 @@
     </Compile>
     <Compile Include="JsonLogTextBox.Designer.cs">
       <DependentUpon>JsonLogTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogControlActionMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LogControlActionMenu.Designer.cs">
+      <DependentUpon>LogControlActionMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="SimpleLogTextBox.cs">
       <SubType>UserControl</SubType>
@@ -94,6 +103,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="JsonLogTextBox.resx">
       <DependentUpon>JsonLogTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogControlActionMenu.resx">
+      <DependentUpon>LogControlActionMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RichTextBoxLogControl.resx">
+      <DependentUpon>RichTextBoxLogControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SimpleLogTextBox.resx">
       <DependentUpon>SimpleLogTextBox.cs</DependentUpon>

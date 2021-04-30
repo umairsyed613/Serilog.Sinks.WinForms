@@ -86,27 +86,25 @@
             // 
             // simpleLogTextBox1
             // 
-            this.simpleLogTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleLogTextBox1.Location = new System.Drawing.Point(16, 44);
             this.simpleLogTextBox1.LogBorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.simpleLogTextBox1.LogPadding = new System.Windows.Forms.Padding(3);
-            this.simpleLogTextBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.simpleLogTextBox1.Name = "simpleLogTextBox1";
-            this.simpleLogTextBox1.ReadOnly = true;
+            this.simpleLogTextBox1.ReadOnly = false;
             this.simpleLogTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.simpleLogTextBox1.Size = new System.Drawing.Size(772, 121);
-            this.simpleLogTextBox1.TabIndex = 1;
+            this.simpleLogTextBox1.Size = new System.Drawing.Size(772, 126);
+            this.simpleLogTextBox1.TabIndex = 6;
             // 
             // LogVieweer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 568);
+            this.Controls.Add(this.simpleLogTextBox1);
             this.Controls.Add(this.gridLog1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.jsonLogTextBox1);
-            this.Controls.Add(this.simpleLogTextBox1);
             this.Controls.Add(this.label1);
             this.Name = "LogVieweer";
             this.Text = "LogVieweer";
@@ -118,10 +116,10 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private Serilog.Sinks.WinForms.SimpleLogTextBox simpleLogTextBox1;
         private Serilog.Sinks.WinForms.JsonLogTextBox jsonLogTextBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private Serilog.Sinks.WinForms.GridLog gridLog1;
+        private Serilog.Sinks.WinForms.SimpleLogTextBox simpleLogTextBox1;
     }
 }

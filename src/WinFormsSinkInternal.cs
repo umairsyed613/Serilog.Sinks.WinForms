@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-
 using Serilog.Core;
 using Serilog.Events;
 using Serilog.Formatting;
@@ -9,19 +8,23 @@ using Serilog.Formatting.Json;
 
 namespace Serilog.Sinks.WinForms
 {
-    public class WinFormsSinkInternal : ILogEventSink
+    public sealed class WinFormsSinkInternal : ILogEventSink
     {
-        public delegate void LogHandler(string str);
+        public delegate void LogHandler(string context, string str);
 
         public event LogHandler OnLogReceived;
+
+        public delegate void ClearLogHandler();
+
+        public event ClearLogHandler OnClearLog;
 
         public delegate void GridLogHandler(GridLogEvent logEvent);
 
         public event GridLogHandler OnGridLogReceived;
 
-        private ITextFormatter _textFormatter;
+        private readonly ITextFormatter _textFormatter;
 
-        private bool _isGridLogger;
+        private readonly bool _isGridLogger;
 
         public WinFormsSinkInternal(ITextFormatter textFormatter, bool isGridLogger = false)
         {
@@ -31,9 +34,15 @@ namespace Serilog.Sinks.WinForms
 
         public void Emit(LogEvent logEvent)
         {
-            if (logEvent == null) throw new ArgumentNullException(nameof(logEvent));
+            if (logEvent == null)
+            {
+                throw new ArgumentNullException(nameof(logEvent));
+            }
 
-            if (_textFormatter == null) { throw new ArgumentNullException("Missing Log Formatter"); }
+            if (_textFormatter == null)
+            {
+                throw new ArgumentNullException($"Missing Log Formatter");
+            }
 
             var renderSpace = new StringWriter();
             _textFormatter.Format(logEvent, renderSpace);
@@ -45,13 +54,17 @@ namespace Serilog.Sinks.WinForms
                 return;
             }
 
-            FireEvent(renderSpace.ToString());
+            logEvent.Properties.TryGetValue("SourceContext", out var contextProperty);
+
+            FireEvent(contextProperty?.ToString().Trim('"'), renderSpace.ToString());
         }
 
-        private void FireEvent(string str)
+        private void FireEvent(string context, string str)
         {
-            OnLogReceived?.Invoke(str);
+            OnLogReceived?.Invoke(context, str);
         }
+
+        public void ClearLogs() => OnClearLog?.Invoke();
     }
 
     public static class WindFormsSink
@@ -82,6 +95,12 @@ namespace Serilog.Sinks.WinForms
             _jsonTextBoxSink = new WinFormsSinkInternal(formatter);
 
             return _jsonTextBoxSink;
+        }
+
+        public static void ClearSimpleTextBoxLog()
+        {
+            SimpleTextBoxSink.ClearLogs();
+            JsonTextBoxSink.ClearLogs();
         }
     }
 }

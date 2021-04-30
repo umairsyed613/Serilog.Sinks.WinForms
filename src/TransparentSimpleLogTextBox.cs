@@ -21,7 +21,7 @@ namespace Serilog.Sinks.WinForms
             this.Multiline = true;
         }
 
-        private void SimpleTextBoxSinkOnLogReceived(string str)
+        private void SimpleTextBoxSinkOnLogReceived(string context, string str)
         {
             if (this.InvokeRequired)
             {
