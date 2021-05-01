@@ -63,7 +63,7 @@ Log.Logger = new LoggerConfiguration()
 #### Log For Context
 
 SimpleLogTextBox, RichTextBoxLogControl or JsonLogTextBox can be configured to display log for specific ***Context***.
-All of the controls have property **For Context** which can be configured with ***namespace.classname*** for example ***TestApplication.Form2*** you can file the sample here >> [Sample](https://github.com/umairsyed613/Serilog.Sinks.WinForms/blob/master/src/Sample/TestApplication/Form2.cs)
+All of the controls have property **For Context** which can be configured with ***namespace.classname*** for example ***TestApplication.Form2*** you can find the sample here >> [Sample](https://github.com/umairsyed613/Serilog.Sinks.WinForms/blob/master/src/Sample/TestApplication/Form2.cs)
 
 **Note:** Remember to configure Logger instance with ***Enrich.FromLogContext()***
 
