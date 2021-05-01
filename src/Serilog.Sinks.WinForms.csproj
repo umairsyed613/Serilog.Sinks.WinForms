@@ -66,6 +66,7 @@
     <Compile Include="JsonLogTextBox.Designer.cs">
       <DependentUpon>JsonLogTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="SaveFileHelper.cs" />
     <Compile Include="SimpleLogTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>

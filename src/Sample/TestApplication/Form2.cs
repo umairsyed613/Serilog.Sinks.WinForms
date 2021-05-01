@@ -14,6 +14,8 @@ namespace TestApplication
 {
     public partial class Form2 : Form
     {
+        private static readonly ILogger _logger = Log.ForContext<Form2>();
+
         public Form2()
         {
             InitializeComponent();
@@ -22,7 +24,7 @@ namespace TestApplication
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Log.Information(textBox1.Text);
+            _logger.Information(textBox1.Text);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -33,8 +35,18 @@ namespace TestApplication
             }
             catch (Exception exception)
             {
-                Log.Error(exception, "Error Happened in Form2");
+                _logger.Error(exception, "Error Happened in Form2");
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            simpleLogTextBox1.ClearLogs();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            simpleLogTextBox1.SaveLogToFile();
         }
     }
 }

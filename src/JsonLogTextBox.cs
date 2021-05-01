@@ -13,6 +13,10 @@ namespace Serilog.Sinks.WinForms
 
         public BorderStyle LogBorderStyle { get; set; } = BorderStyle.Fixed3D;
 
+        public string ForContext { get; set; } = string.Empty;
+
+        private bool _isContextConfigured = false;
+
         public JsonLogTextBox()
         {
             InitializeComponent();
@@ -30,24 +34,55 @@ namespace Serilog.Sinks.WinForms
             WindFormsSink.JsonTextBoxSink.OnLogReceived += JsonTextBoxSinkOnLogReceived;
         }
 
-        private void JsonTextBoxSinkOnLogReceived(string str)
+        private void JsonTextBoxSinkOnLogReceived(string context, string str)
+        {
+            if (_isContextConfigured)
+            {
+                if (!string.IsNullOrEmpty(this.ForContext)
+                 && !string.IsNullOrEmpty(context)
+                 && this.ForContext.Equals(context, StringComparison.InvariantCultureIgnoreCase)) { PrintText(str); }
+            }
+            else
+            {
+                PrintText(str);
+            }
+
+            Application.DoEvents();
+        }
+
+        private void PrintText(string str)
         {
             if (this.InvokeRequired)
             {
                 this.Invoke(
                     (MethodInvoker)delegate
-                        {
-                            TxtLogControl.AppendText(str);
-                            TxtLogControl.ScrollToCaret();
-                        });
+                    {
+                        TxtLogControl.AppendText(str);
+                        TxtLogControl.ScrollToCaret();
+                    });
             }
             else
             {
                 TxtLogControl.AppendText(str);
                 TxtLogControl.ScrollToCaret();
             }
+        }
 
-            Application.DoEvents();
+        public void ClearLogs()
+        {
+            if (this.InvokeRequired)
+            {
+                this.Invoke((MethodInvoker)(() => TxtLogControl.Clear()));
+            }
+            else
+            {
+                TxtLogControl.Clear();
+            }
+        }
+
+        public void SaveLogToFile()
+        {
+            SaveFileHelper.SaveLogsToFile(TxtLogControl.Text);
         }
     }
 }

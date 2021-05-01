@@ -75,6 +75,7 @@
             // 
             // jsonLogTextBox1
             // 
+            this.jsonLogTextBox1.ForContext = "";
             this.jsonLogTextBox1.Location = new System.Drawing.Point(16, 196);
             this.jsonLogTextBox1.LogBorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.jsonLogTextBox1.LogPadding = new System.Windows.Forms.Padding(3);
@@ -86,7 +87,8 @@
             // 
             // simpleLogTextBox1
             // 
-            this.simpleLogTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleLogTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleLogTextBox1.ForContext = "";
             this.simpleLogTextBox1.Location = new System.Drawing.Point(16, 44);
             this.simpleLogTextBox1.LogBorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.simpleLogTextBox1.LogPadding = new System.Windows.Forms.Padding(3);
@@ -109,7 +111,7 @@
             this.Controls.Add(this.simpleLogTextBox1);
             this.Controls.Add(this.label1);
             this.Name = "LogVieweer";
-            this.Text = "LogVieweer";
+            this.Text = "LogViewer";
             this.ResumeLayout(false);
             this.PerformLayout();
 

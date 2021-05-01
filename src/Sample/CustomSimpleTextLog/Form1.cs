@@ -24,7 +24,7 @@ namespace CustomSimpleTextLog
             WindFormsSink.SimpleTextBoxSink.OnLogReceived += SimpleTextBoxSinkOnOnLogReceived;
         }
 
-        private void SimpleTextBoxSinkOnOnLogReceived(string str)
+        private void SimpleTextBoxSinkOnOnLogReceived(string context, string str)
         {
             this.textBox1.AppendText(str);
             this.richTextBox1.AppendText(str);

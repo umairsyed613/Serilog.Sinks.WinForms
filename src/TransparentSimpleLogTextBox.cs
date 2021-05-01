@@ -6,6 +6,9 @@ namespace Serilog.Sinks.WinForms
 {
     public partial class TransparentSimpleLogTextBox : TextBox
     {
+        public string ForContext { get; set; } = string.Empty;
+        private bool _isContextConfigured = false;
+
         public TransparentSimpleLogTextBox()
         {
             InitializeComponent();
@@ -21,12 +24,28 @@ namespace Serilog.Sinks.WinForms
             this.Multiline = true;
         }
 
-        private void SimpleTextBoxSinkOnLogReceived(string str)
+        private void SimpleTextBoxSinkOnLogReceived(string context, string str)
+        {
+            if (_isContextConfigured)
+            {
+                if (!string.IsNullOrEmpty(this.ForContext)
+                 && !string.IsNullOrEmpty(context)
+                 && this.ForContext.Equals(context, StringComparison.InvariantCultureIgnoreCase)) { PrintLog(str); }
+            }
+            else
+            {
+                PrintLog(str);
+            }
+
+            Application.DoEvents();
+        }
+
+        private void PrintLog(string str)
         {
             if (this.InvokeRequired)
             {
                 this.Invoke(
-                    (MethodInvoker)delegate
+                    (MethodInvoker) delegate
                     {
                         this.AppendText(str);
                         this.ScrollToCaret();
@@ -37,8 +56,23 @@ namespace Serilog.Sinks.WinForms
                 this.AppendText(str);
                 this.ScrollToCaret();
             }
+        }
 
-            Application.DoEvents();
+        public void ClearLogs()
+        {
+            if (this.InvokeRequired)
+            {
+                this.Invoke((MethodInvoker)(() => this.Clear()));
+            }
+            else
+            {
+                this.Clear();
+            }
+        }
+
+        public void SaveLogToFile()
+        {
+            SaveFileHelper.SaveLogsToFile(this.Text);
         }
     }
 }

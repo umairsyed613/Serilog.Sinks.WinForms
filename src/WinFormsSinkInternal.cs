@@ -9,9 +9,9 @@ using Serilog.Formatting.Json;
 
 namespace Serilog.Sinks.WinForms
 {
-    public class WinFormsSinkInternal : ILogEventSink
+    public sealed class WinFormsSinkInternal : ILogEventSink
     {
-        public delegate void LogHandler(string str);
+        public delegate void LogHandler(string sourceContext, string str);
 
         public event LogHandler OnLogReceived;
 
@@ -19,9 +19,9 @@ namespace Serilog.Sinks.WinForms
 
         public event GridLogHandler OnGridLogReceived;
 
-        private ITextFormatter _textFormatter;
+        private readonly ITextFormatter _textFormatter;
 
-        private bool _isGridLogger;
+        private readonly bool _isGridLogger;
 
         public WinFormsSinkInternal(ITextFormatter textFormatter, bool isGridLogger = false)
         {
@@ -31,9 +31,15 @@ namespace Serilog.Sinks.WinForms
 
         public void Emit(LogEvent logEvent)
         {
-            if (logEvent == null) throw new ArgumentNullException(nameof(logEvent));
+            if (logEvent == null)
+            {
+                throw new ArgumentNullException(nameof(logEvent));
+            }
 
-            if (_textFormatter == null) { throw new ArgumentNullException("Missing Log Formatter"); }
+            if (_textFormatter == null)
+            {
+                throw new ArgumentNullException($"Missing Log Formatter");
+            }
 
             var renderSpace = new StringWriter();
             _textFormatter.Format(logEvent, renderSpace);
@@ -45,12 +51,14 @@ namespace Serilog.Sinks.WinForms
                 return;
             }
 
-            FireEvent(renderSpace.ToString());
+            logEvent.Properties.TryGetValue("SourceContext", out var contextProperty);
+
+            FireEvent(contextProperty?.ToString().Trim('"'), renderSpace.ToString());
         }
 
-        private void FireEvent(string str)
+        private void FireEvent(string context, string str)
         {
-            OnLogReceived?.Invoke(str);
+            OnLogReceived?.Invoke(context, str);
         }
     }
 
@@ -58,11 +66,9 @@ namespace Serilog.Sinks.WinForms
     {
         private static readonly ITextFormatter _defaultTextFormatter = new MessageTemplateTextFormatter("{Timestamp:HH:mm:ss} {Level} {Message:lj}{NewLine}{Exception}");
 
-        private static WinFormsSinkInternal _simpleTextBoxSink = new WinFormsSinkInternal(_defaultTextFormatter);
-        public static WinFormsSinkInternal SimpleTextBoxSink => _simpleTextBoxSink;
+        public static WinFormsSinkInternal SimpleTextBoxSink { get; private set; } = new WinFormsSinkInternal(_defaultTextFormatter);
 
-        private static WinFormsSinkInternal _jsonTextBoxSink = new WinFormsSinkInternal(new JsonFormatter());
-        public static WinFormsSinkInternal JsonTextBoxSink => _jsonTextBoxSink;
+        public static WinFormsSinkInternal JsonTextBoxSink { get; private set; } = new WinFormsSinkInternal(new JsonFormatter());
 
         public static readonly WinFormsSinkInternal GridLogSink = new WinFormsSinkInternal(new MessageTemplateTextFormatter("{Message}{NewLine}{Exception}"), true);
 
@@ -70,18 +76,18 @@ namespace Serilog.Sinks.WinForms
         {
             if (formatter == null) { formatter = _defaultTextFormatter; }
 
-            _simpleTextBoxSink = new WinFormsSinkInternal(formatter);
+            SimpleTextBoxSink = new WinFormsSinkInternal(formatter);
 
-            return _simpleTextBoxSink;
+            return SimpleTextBoxSink;
         }
 
         public static WinFormsSinkInternal MakeJsonTextBoxSink(ITextFormatter formatter = null)
         {
             if (formatter == null) { formatter = new JsonFormatter(); }
 
-            _jsonTextBoxSink = new WinFormsSinkInternal(formatter);
+            JsonTextBoxSink = new WinFormsSinkInternal(formatter);
 
-            return _jsonTextBoxSink;
+            return JsonTextBoxSink;
         }
     }
 }
