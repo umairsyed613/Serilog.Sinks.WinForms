@@ -79,4 +79,4 @@ Check the usage in sample application here [Sample](https://github.com/umairsyed
 
 Find the sample running application [here](https://github.com/umairsyed613/Serilog.Sinks.WinForms/tree/master/Sample/TestApplication/)
 
-![Sample](https://github.com/umairsyed613/Serilog.Sinks.WinForms/blob/master/SampleVideo.gif)
+![Sample](https://github.com/umairsyed613/Serilog.Sinks.WinForms/blob/main/SampleVideo.gif)
