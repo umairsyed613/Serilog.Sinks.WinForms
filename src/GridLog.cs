@@ -15,6 +15,11 @@ namespace Serilog.Sinks.WinForms
             LogGridView.Font = this.Font;
 
             WindFormsSink.GridLogSink.OnGridLogReceived += GridLogSink_OnGridLogReceived;
+
+            HandleDestroyed += ( handler, args ) =>
+            {
+                WindFormsSink.GridLogSink.OnGridLogReceived -= GridLogSink_OnGridLogReceived;
+            };
         }
 
         private void GridLogSink_OnGridLogReceived(GridLogEvent logEvent)
