@@ -35,6 +35,11 @@ namespace Serilog.Sinks.WinForms
             _isContextConfigured = !string.IsNullOrEmpty(this.ForContext);
 
             WindFormsSink.SimpleTextBoxSink.OnLogReceived += SimpleTextBoxSinkOnLogReceived;
+
+            HandleDestroyed += ( handler, args ) =>
+            {
+                WindFormsSink.SimpleTextBoxSink.OnLogReceived -= SimpleTextBoxSinkOnLogReceived;
+            };
         }
 
         private void SimpleTextBoxSinkOnLogReceived(string context, string str)

@@ -12,6 +12,11 @@ namespace Serilog.Sinks.WinForms
         {
             InitializeComponent();
             WindFormsSink.SimpleTextBoxSink.OnLogReceived += SimpleTextBoxSinkOnLogReceived;
+
+            HandleDestroyed += ( sender, args ) =>
+            {
+                WindFormsSink.SimpleTextBoxSink.OnLogReceived -= SimpleTextBoxSinkOnLogReceived;
+            };
         }
 
         private void SimpleTextBoxSinkOnLogReceived(string context, string str)

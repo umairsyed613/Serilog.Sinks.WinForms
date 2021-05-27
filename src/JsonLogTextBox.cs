@@ -32,6 +32,11 @@ namespace Serilog.Sinks.WinForms
             TxtLogControl.ForeColor = this.ForeColor;
             TxtLogControl.BackColor = this.BackColor;
             WindFormsSink.JsonTextBoxSink.OnLogReceived += JsonTextBoxSinkOnLogReceived;
+
+            HandleDestroyed += ( handler, args ) =>
+            {
+                WindFormsSink.JsonTextBoxSink.OnLogReceived -= JsonTextBoxSinkOnLogReceived;
+            };
         }
 
         private void JsonTextBoxSinkOnLogReceived(string context, string str)

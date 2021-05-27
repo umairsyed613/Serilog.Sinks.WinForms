@@ -21,6 +21,12 @@ namespace Serilog.Sinks.WinForms
 
             BackColor = Color.Transparent;
             WindFormsSink.SimpleTextBoxSink.OnLogReceived += SimpleTextBoxSinkOnLogReceived;
+
+            HandleDestroyed += ( handler, args ) =>
+            {
+                WindFormsSink.SimpleTextBoxSink.OnLogReceived -= SimpleTextBoxSinkOnLogReceived;
+            };
+
             this.Multiline = true;
         }
 
