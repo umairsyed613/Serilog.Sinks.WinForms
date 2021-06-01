@@ -29,9 +29,9 @@ namespace Serilog.Sinks.WinForms
         /// </summary>
         /// <param name="configuration"></param>
         /// <returns></returns>
-        public static LoggerConfiguration WriteToGridView(this LoggerConfiguration configuration)
+        public static LoggerConfiguration WriteToGridView(this LoggerConfiguration configuration, string outputformat = null)
         {
-            return configuration.WriteTo.Sink(WindFormsSink.GridLogSink);
+            return configuration.WriteTo.Sink(WindFormsSink.MakeGridLoggerSink(outputformat));
         }
     }
 }

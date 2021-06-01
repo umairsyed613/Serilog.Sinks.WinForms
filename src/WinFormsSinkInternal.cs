@@ -65,12 +65,13 @@ namespace Serilog.Sinks.WinForms
     public static class WindFormsSink
     {
         private static readonly ITextFormatter _defaultTextFormatter = new MessageTemplateTextFormatter("{Timestamp:HH:mm:ss} {Level} {Message:lj}{NewLine}{Exception}");
+        private static readonly ITextFormatter _defaultGridTextFormatter = new MessageTemplateTextFormatter("{Message:lj}{Exception}");
 
         public static WinFormsSinkInternal SimpleTextBoxSink { get; private set; } = new WinFormsSinkInternal(_defaultTextFormatter);
 
         public static WinFormsSinkInternal JsonTextBoxSink { get; private set; } = new WinFormsSinkInternal(new JsonFormatter());
 
-        public static readonly WinFormsSinkInternal GridLogSink = new WinFormsSinkInternal(new MessageTemplateTextFormatter("{Message}{NewLine}{Exception}"), true);
+        public static WinFormsSinkInternal GridLogSink { get; private set; } = new WinFormsSinkInternal(_defaultGridTextFormatter, true);
 
         public static WinFormsSinkInternal MakeSimpleTextBoxSink(ITextFormatter formatter = null)
         {
@@ -88,6 +89,18 @@ namespace Serilog.Sinks.WinForms
             JsonTextBoxSink = new WinFormsSinkInternal(formatter);
 
             return JsonTextBoxSink;
+        }
+
+        public static WinFormsSinkInternal MakeGridLoggerSink(string outputFormat)
+        {
+            if (string.IsNullOrEmpty(outputFormat))
+            {
+                return GridLogSink;
+            }
+
+            GridLogSink = new WinFormsSinkInternal(new MessageTemplateTextFormatter(outputFormat), true);
+
+            return GridLogSink;
         }
     }
 }

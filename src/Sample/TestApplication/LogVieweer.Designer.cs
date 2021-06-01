@@ -68,6 +68,7 @@
             // 
             // gridLog1
             // 
+            this.gridLog1.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridLog1.Location = new System.Drawing.Point(16, 349);
             this.gridLog1.Name = "gridLog1";
             this.gridLog1.Size = new System.Drawing.Size(772, 180);
@@ -92,7 +93,7 @@
             this.simpleLogTextBox1.Location = new System.Drawing.Point(16, 44);
             this.simpleLogTextBox1.LogBorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.simpleLogTextBox1.LogPadding = new System.Windows.Forms.Padding(3);
-            this.simpleLogTextBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.simpleLogTextBox1.Margin = new System.Windows.Forms.Padding(6);
             this.simpleLogTextBox1.Name = "simpleLogTextBox1";
             this.simpleLogTextBox1.ReadOnly = true;
             this.simpleLogTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;

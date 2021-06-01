@@ -13,14 +13,9 @@ namespace TestApplication
 {
     public partial class MasterForm : Form
     {
-        private LogVieweer LogViewer;
-
         public MasterForm()
         {
             InitializeComponent();
-
-            LogViewer = new LogVieweer();
-            LogViewer.MdiParent = this;
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -39,6 +34,10 @@ namespace TestApplication
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
+            var LogViewer = new LogVieweer
+            {
+                MdiParent = this
+            };
             LogViewer.Show();
         }
 

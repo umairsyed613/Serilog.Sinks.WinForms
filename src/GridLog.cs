@@ -16,7 +16,7 @@ namespace Serilog.Sinks.WinForms
 
             WindFormsSink.GridLogSink.OnGridLogReceived += GridLogSink_OnGridLogReceived;
 
-            HandleDestroyed += ( handler, args ) =>
+            HandleDestroyed += (handler, args) =>
             {
                 WindFormsSink.GridLogSink.OnGridLogReceived -= GridLogSink_OnGridLogReceived;
             };
@@ -29,12 +29,14 @@ namespace Serilog.Sinks.WinForms
                 this.Invoke(
                     (MethodInvoker)delegate
                         {
-                            LogGridView.Rows.Add(logEvent.TimeStamp.ToString(), logEvent.Level, logEvent.Message);
+                            LogGridView.Rows.Add(logEvent.TimeStamp.ToString(), logEvent.Level, logEvent.Message?.Trim());
+                            LogGridView.FirstDisplayedScrollingRowIndex = LogGridView.RowCount - 1;
                         });
             }
             else
             {
                 LogGridView.Rows.Add(logEvent.TimeStamp.ToString(), logEvent.Level, logEvent.Message);
+                LogGridView.FirstDisplayedScrollingRowIndex = LogGridView.RowCount - 1;
             }
 
             Application.DoEvents();
