@@ -21,6 +21,12 @@ Install the [Serilog.Sinks.WinForms](https://www.nuget.org/packages/Serilog.Sink
 Install-Package Serilog.Sinks.WinForms
 ```
 
+Install the [Serilog.Sinks.WinForms.Core](https://www.nuget.org/packages/Serilog.Sinks.WinForms.Core/) package from NuGet:
+
+```powershell
+Install-Package Serilog.Sinks.WinForms.Core
+```
+
 To configure the sink in C# code, call `WriteToSimpleAndRichTextBox()` or `WriteToJsonTextBox()` or `WriteToGridView()` during logger configuration:
 
 ##### Simple Text Formatted Log And Rich TextBox Log Control
