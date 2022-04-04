@@ -80,15 +80,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Serilog.Sinks.WinForms.csproj">
-      <Project>{e6e8355a-dc58-45b7-bbd3-8132610f5ebf}</Project>
-      <Name>Serilog.Sinks.WinForms</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="Serilog">
       <Version>2.10.0</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Serilog.Sinks.WinForms.Base\Serilog.Sinks.WinForms.Base.csproj">
+      <Project>{ccb237ee-bc54-435f-a0f2-0c13cbcf6e06}</Project>
+      <Name>Serilog.Sinks.WinForms.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Serilog.Sinks.WinForms.Net\Serilog.Sinks.WinForms.csproj">
+      <Project>{e6e8355a-dc58-45b7-bbd3-8132610f5ebf}</Project>
+      <Name>Serilog.Sinks.WinForms</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

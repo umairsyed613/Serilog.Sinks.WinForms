@@ -1,6 +1,6 @@
 ﻿using Serilog.Formatting;
 
-namespace Serilog.Sinks.WinForms
+namespace Serilog.Sinks.WinForms.Base
 {
     public static class WindFromsSinkExtensions
     {

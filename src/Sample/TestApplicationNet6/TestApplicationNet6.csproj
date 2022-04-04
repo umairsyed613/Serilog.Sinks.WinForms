@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Serilog" Version="2.10.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Serilog.Sinks.WinForms.Base\Serilog.Sinks.WinForms.Base.csproj" />
+    <ProjectReference Include="..\..\Serilog.Sinks.WinForms.Core\Serilog.Sinks.WinForms.Core.csproj" />
+  </ItemGroup>
+
+</Project>

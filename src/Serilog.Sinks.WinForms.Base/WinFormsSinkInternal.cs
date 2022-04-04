@@ -7,7 +7,7 @@ using Serilog.Formatting;
 using Serilog.Formatting.Display;
 using Serilog.Formatting.Json;
 
-namespace Serilog.Sinks.WinForms
+namespace Serilog.Sinks.WinForms.Base
 {
     public sealed class WinFormsSinkInternal : ILogEventSink
     {

@@ -2,7 +2,7 @@
 
 using Serilog.Events;
 
-namespace Serilog.Sinks.WinForms
+namespace Serilog.Sinks.WinForms.Base
 {
     public class GridLogEvent
     {

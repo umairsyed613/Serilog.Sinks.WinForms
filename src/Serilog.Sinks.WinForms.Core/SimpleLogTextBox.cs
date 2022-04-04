@@ -1,7 +1,6 @@
-﻿using System;
-using System.Windows.Forms;
+﻿using Serilog.Sinks.WinForms.Base;
 
-namespace Serilog.Sinks.WinForms
+namespace Serilog.Sinks.WinForms.Core
 {
     public partial class SimpleLogTextBox : UserControl
     {

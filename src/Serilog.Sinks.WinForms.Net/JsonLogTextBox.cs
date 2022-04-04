@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Serilog.Sinks.WinForms.Base;
+using System;
 using System.Windows.Forms;
 
 namespace Serilog.Sinks.WinForms

@@ -43,7 +43,7 @@
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
-      <HintPath>packages\Serilog.2.10.0\lib\net46\Serilog.dll</HintPath>
+      <HintPath>..\packages\Serilog.2.10.0\lib\net46\Serilog.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -59,7 +59,6 @@
     <Compile Include="GridLog.Designer.cs">
       <DependentUpon>GridLog.cs</DependentUpon>
     </Compile>
-    <Compile Include="GridLogEvent.cs" />
     <Compile Include="JsonLogTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -86,8 +85,6 @@
     <Compile Include="RichTextBoxLogControl.Designer.cs">
       <DependentUpon>RichTextBoxLogControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="WindFromsSinkExtensions.cs" />
-    <Compile Include="WinFormsSinkInternal.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="GridLog.resx">
@@ -102,6 +99,12 @@
     <EmbeddedResource Include="TransparentSimpleLogTextBox.resx">
       <DependentUpon>TransparentSimpleLogTextBox.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Serilog.Sinks.WinForms.Base\Serilog.Sinks.WinForms.Base.csproj">
+      <Project>{ccb237ee-bc54-435f-a0f2-0c13cbcf6e06}</Project>
+      <Name>Serilog.Sinks.WinForms.Base</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

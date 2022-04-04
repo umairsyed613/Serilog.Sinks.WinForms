@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Serilog;
 using Serilog.Sinks.WinForms;
+using Serilog.Sinks.WinForms.Base;
 
 namespace CustomSimpleTextLog
 {
