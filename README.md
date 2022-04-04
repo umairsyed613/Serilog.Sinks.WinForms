@@ -1,4 +1,5 @@
 #Build Status
+
 ![Build Status](https://travis-ci.org/umairsyed613/Serilog.Sinks.WinForms.svg?branch=master)
 
 # Serilog.Sinks.WinForms (.net framework >= 4.6)
@@ -6,6 +7,7 @@
 [![NuGet version](https://badge.fury.io/nu/Serilog.Sinks.WinForms.png)](https://badge.fury.io/nu/Serilog.Sinks.WinForms) [![Nuget](https://img.shields.io/nuget/dt/Serilog.Sinks.WinForms)](https://www.nuget.org/packages/Serilog.Sinks.WinForms)
 
 #Serilog.Sinks.WinForms.Core (.net 5-6)
+
 [![NuGet version](https://badge.fury.io/nu/Serilog.Sinks.WinForms.Core.png)](https://badge.fury.io/nu/Serilog.Sinks.WinForms.Core) [![Nuget](https://img.shields.io/nuget/dt/Serilog.Sinks.WinForms.Core)](https://www.nuget.org/packages/Serilog.Sinks.WinForms.Core)
 
 
