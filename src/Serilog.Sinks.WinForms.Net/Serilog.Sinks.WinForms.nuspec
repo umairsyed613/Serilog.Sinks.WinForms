@@ -14,4 +14,7 @@
     <copyright>$copyright$</copyright>
     <tags>Serilog WindowsForms WinForm WinForms SerilogSink Sink Windows Forms Application</tags>
   </metadata>
+  <files>
+    <file src="bin\Release\Serilog.Sinks.*.dll" target="lib" />
+</files>
 </package>

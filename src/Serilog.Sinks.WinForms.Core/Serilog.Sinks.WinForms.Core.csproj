@@ -20,8 +20,20 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\Serilog.Sinks.WinForms.Base\Serilog.Sinks.WinForms.Base.csproj" />
+		<ProjectReference Include="..\Serilog.Sinks.WinForms.Base\Serilog.Sinks.WinForms.Base.csproj" PrivateAssets="All" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="../../assets/serilog-sink-nuget.png" Pack="true" PackagePath="images\icon.png" />
+		<None Include="../../README.md" Pack="true" PackagePath="" />
 	</ItemGroup>
 
+	<PropertyGroup>
+		<TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);IncludeP2PAssets</TargetsForTfmSpecificBuildOutput>
+	</PropertyGroup>
+	<Target Name="IncludeP2PAssets">
+		<ItemGroup>
+			<BuildOutputInPackage Include="$(OutputPath)Serilog.Sinks.WinForms.Base.dll" />
+		</ItemGroup>
+	</Target>
 
 </Project>
