@@ -7,11 +7,15 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<LangVersion>latest</LangVersion>
 		<Description>Writes Serilog events to Windows Forms Application TextBox or Datagridview control from anywhere in your application.</Description>
-		<VersionPrefix>1.0.0</VersionPrefix>
+		<VersionPrefix>1.0.2</VersionPrefix>
 		<Authors>UmairSyed (@umairsyed613)</Authors>
 		<PackageProjectUrl>https://github.com/umairsyed613/Serilog.Sinks.WinForms</PackageProjectUrl>
+		<PackageIcon>images\icon.png</PackageIcon>
+		<PackageIconUrl>https://github.com/umairsyed613/Serilog.Sinks.WinForms/blob/main/assets/serilog-sink-nuget.png</PackageIconUrl>
 		<Copyright>Copyright ©  2022</Copyright>
 		<RepositoryUrl>https://github.com/umairsyed613/Serilog.Sinks.WinForms</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<RootNamespace>Serilog</RootNamespace>
 		<PackageTags>Serilog;Serilog-windows-forms;windowsforms-windowsformnet5;serilognet6;serilognet5;serilogwindowsforms</PackageTags>
 		<PackageReleaseNotes>Read Docs at https://github.com/umairsyed613/Serilog.Sinks.WinForms</PackageReleaseNotes>
 		<NeutralLanguage>en</NeutralLanguage>
@@ -21,10 +25,11 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\Serilog.Sinks.WinForms.Base\Serilog.Sinks.WinForms.Base.csproj" PrivateAssets="All" />
+		<PackageReference Include="Serilog" Version="2.10.0" />
 	</ItemGroup>
 	<ItemGroup>
 		<None Include="../../assets/serilog-sink-nuget.png" Pack="true" PackagePath="images\icon.png" />
-		<None Include="../../README.md" Pack="true" PackagePath="" />
+		<None Include="../../README.md" Pack="false" PackagePath="" />
 	</ItemGroup>
 
 	<PropertyGroup>

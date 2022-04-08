@@ -13,8 +13,15 @@
     <releaseNotes>Read Docs at https://github.com/umairsyed613/Serilog.Sinks.WinForms</releaseNotes>
     <copyright>$copyright$</copyright>
     <tags>Serilog WindowsForms WinForm WinForms SerilogSink Sink Windows Forms Application</tags>
+	<icon>images\icon.png</icon>
+	  <dependencies>
+    <dependency id="Serilog" version="[2,10)" />
+</dependencies>
   </metadata>
+
   <files>
     <file src="bin\Release\Serilog.Sinks.*.dll" target="lib" />
+	<file src="bin\Release\Serilog.Sinks.WinForms.Base.dll" target="lib\net46" />
+	<file src="..\..\assets\serilog-sink-nuget.png" target="images\icon.png" />
 </files>
 </package>

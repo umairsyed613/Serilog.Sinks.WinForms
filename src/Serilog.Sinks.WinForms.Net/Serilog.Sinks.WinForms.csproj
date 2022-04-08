@@ -106,5 +106,9 @@
 	<ItemGroup>
 		<None Include="packages.config" />
 	</ItemGroup>
+	<ItemGroup>
+    <None Include="..\..\assets\serilog-sink-nuget.png" Pack="true" Visible="false" PackagePath="images\icon.png" />
+  </ItemGroup>
+
 	<Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
