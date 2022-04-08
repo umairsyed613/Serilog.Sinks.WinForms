@@ -15,7 +15,7 @@
     <tags>Serilog WindowsForms WinForm WinForms SerilogSink Sink Windows Forms Application</tags>
 	<icon>images\icon.png</icon>
 	  <dependencies>
-    <dependency id="Serilog" version="[2,10)" />
+    <dependency id="Serilog" version="[2.10]" />
 </dependencies>
   </metadata>
 
