@@ -34,6 +34,7 @@
             this.gridLog1 = new Serilog.Sinks.WinForms.GridLog();
             this.jsonLogTextBox1 = new Serilog.Sinks.WinForms.JsonLogTextBox();
             this.simpleLogTextBox1 = new Serilog.Sinks.WinForms.SimpleLogTextBox();
+            this.richTextBoxLogControl1 = new Serilog.Sinks.WinForms.RichTextBoxLogControl();
             this.SuspendLayout();
             // 
             // label1
@@ -100,11 +101,22 @@
             this.simpleLogTextBox1.Size = new System.Drawing.Size(772, 121);
             this.simpleLogTextBox1.TabIndex = 1;
             // 
+            // richTextBoxLogControl1
+            // 
+            this.richTextBoxLogControl1.ForContext = "TestApplication.Form1";
+            this.richTextBoxLogControl1.Location = new System.Drawing.Point(16, 551);
+            this.richTextBoxLogControl1.Name = "richTextBoxLogControl1";
+            this.richTextBoxLogControl1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.richTextBoxLogControl1.Size = new System.Drawing.Size(772, 211);
+            this.richTextBoxLogControl1.TabIndex = 6;
+            this.richTextBoxLogControl1.Text = "";
+            // 
             // LogVieweer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 568);
+            this.ClientSize = new System.Drawing.Size(800, 774);
+            this.Controls.Add(this.richTextBoxLogControl1);
             this.Controls.Add(this.gridLog1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -126,5 +138,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private Serilog.Sinks.WinForms.GridLog gridLog1;
+        private Serilog.Sinks.WinForms.RichTextBoxLogControl richTextBoxLogControl1;
     }
 }

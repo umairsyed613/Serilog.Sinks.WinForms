@@ -5,7 +5,6 @@ namespace Serilog.Sinks.WinForms.Core
     public partial class RichTextBoxLogControl : RichTextBox
     {
         public string ForContext { get; set; } = string.Empty;
-        private bool _isContextConfigured = false;
 
         public RichTextBoxLogControl()
         {
@@ -20,10 +19,9 @@ namespace Serilog.Sinks.WinForms.Core
 
         private void SimpleTextBoxSinkOnLogReceived(string context, string str)
         {
-            if (_isContextConfigured)
+            if (!string.IsNullOrEmpty(this.ForContext.Trim()))
             {
-                if (!string.IsNullOrEmpty(this.ForContext)
-                 && !string.IsNullOrEmpty(context)
+                if (!string.IsNullOrEmpty(context)
                  && this.ForContext.Equals(context, StringComparison.InvariantCultureIgnoreCase)) { PrintText(str); }
             }
             else

@@ -14,15 +14,16 @@ namespace TestApplication
 {
     public partial class Form1 : Form
     {
+        private ILogger logger = Log.ForContext<Form1>();
         public Form1()
         {
             InitializeComponent();
-            Log.Information("Form1 has been Initialized");
+            logger.Information("Form1 has been Initialized");
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Log.Information(textBox1.Text);
+            logger.Information(textBox1.Text);
         }
     }
 }
