@@ -1,1 +1,0 @@
-nuget pack Serilog.Sinks.WinForms.csproj -Prop Configuration=Release
