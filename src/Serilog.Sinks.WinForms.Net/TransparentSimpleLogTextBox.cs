@@ -1,5 +1,6 @@
 ﻿using Serilog.Sinks.WinForms.Base;
 using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -7,8 +8,12 @@ namespace Serilog.Sinks.WinForms
 {
     public partial class TransparentSimpleLogTextBox : TextBox
     {
-        public string ForContext { get; set; } = string.Empty;
+        [Category("Serilog Sink WinForms")] public string ForContext { get; set; } = string.Empty;
+        [Category("Serilog Sink WinForms")] public bool AutoPurge { get; set; }
+        [Category("Serilog Sink WinForms")] public double AutoPurgeTime { get; set; } = 60;
+
         private bool _isContextConfigured = false;
+        private Timer _timer;
 
         public TransparentSimpleLogTextBox()
         {
@@ -29,6 +34,21 @@ namespace Serilog.Sinks.WinForms
             };
 
             this.Multiline = true;
+
+            if (AutoPurge)
+            {
+                _timer = new Timer
+                {
+                    Interval = Convert.ToInt32(TimeSpan.FromMinutes(AutoPurgeTime).TotalMilliseconds)
+                };
+                _timer.Tick += _timer_Tick;
+                _timer.Start();
+            }
+        }
+
+        private void _timer_Tick(object sender, EventArgs e)
+        {
+            ClearLogs();
         }
 
         private void SimpleTextBoxSinkOnLogReceived(string context, string str)

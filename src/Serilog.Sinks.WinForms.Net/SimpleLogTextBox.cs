@@ -15,7 +15,7 @@ namespace Serilog.Sinks.WinForms
         [Category("Serilog Sink WinForms")] public string ForContext { get; set; } = string.Empty;
         [Category("Serilog Sink WinForms")] public BorderStyle LogBorderStyle { get; set; } = BorderStyle.Fixed3D;
         [Category("Serilog Sink WinForms")] public bool AutoPurge { get; set; }
-        [Category("Serilog Sink WinForms")] public int AutoPurgeTime { get; set; } = 60;
+        [Category("Serilog Sink WinForms")] public double AutoPurgeTime { get; set; } = 60;
 
         private Timer _timer;
 
@@ -46,7 +46,7 @@ namespace Serilog.Sinks.WinForms
             {
                 _timer = new Timer
                 {
-                    Interval = TimeSpan.FromMinutes(AutoPurgeTime).Milliseconds
+                    Interval = Convert.ToInt32(TimeSpan.FromMinutes(AutoPurgeTime).TotalMilliseconds)
                 };
                 _timer.Tick += _timer_Tick;
                 _timer.Start();
@@ -56,6 +56,18 @@ namespace Serilog.Sinks.WinForms
         private void _timer_Tick(object sender, EventArgs e)
         {
             ClearLogs();
+        }
+
+        public void ClearLogs()
+        {
+            if (this.InvokeRequired)
+            {
+                this.Invoke((MethodInvoker)(() => TxtLogControl.Clear()));
+            }
+            else
+            {
+                TxtLogControl.Clear();
+            }
         }
 
         private void SimpleTextBoxSinkOnLogReceived(string context, string str)
@@ -95,17 +107,6 @@ namespace Serilog.Sinks.WinForms
             }
         }
 
-        public void ClearLogs()
-        {
-            if (this.InvokeRequired)
-            {
-                this.Invoke((MethodInvoker)(() => TxtLogControl.Clear()));
-            }
-            else
-            {
-                TxtLogControl.Clear();
-            }
-        }
 
         public void SaveLogToFile()
         {

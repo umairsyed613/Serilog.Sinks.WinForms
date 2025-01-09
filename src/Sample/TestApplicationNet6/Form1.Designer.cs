@@ -28,80 +28,70 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.simpleLogTextBox1 = new Serilog.Sinks.WinForms.Core.SimpleLogTextBox();
-            this.txtLog = new System.Windows.Forms.TextBox();
-            this.btnWriteLog = new System.Windows.Forms.Button();
-            this.jsonLogTextBox1 = new Serilog.Sinks.WinForms.Core.JsonLogTextBox();
-            this.richTextBoxLogControl1 = new Serilog.Sinks.WinForms.Core.RichTextBoxLogControl();
-            this.SuspendLayout();
+            simpleLogTextBox1 = new Serilog.Sinks.WinForms.Core.SimpleLogTextBox();
+            txtLog = new TextBox();
+            btnWriteLog = new Button();
+            jsonLogTextBox1 = new Serilog.Sinks.WinForms.Core.JsonLogTextBox();
+            richTextBoxLogControl1 = new Serilog.Sinks.WinForms.Core.RichTextBoxLogControl();
+            SuspendLayout();
             // 
             // simpleLogTextBox1
             // 
-            this.simpleLogTextBox1.ForContext = "";
-            this.simpleLogTextBox1.Location = new System.Drawing.Point(13, 79);
-            this.simpleLogTextBox1.LogBorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.simpleLogTextBox1.LogPadding = new System.Windows.Forms.Padding(3);
-            this.simpleLogTextBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.simpleLogTextBox1.Name = "simpleLogTextBox1";
-            this.simpleLogTextBox1.ReadOnly = false;
-            this.simpleLogTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.simpleLogTextBox1.Size = new System.Drawing.Size(774, 148);
-            this.simpleLogTextBox1.TabIndex = 0;
+            simpleLogTextBox1.Location = new Point(13, 79);
+            simpleLogTextBox1.Margin = new Padding(4, 3, 4, 3);
+            simpleLogTextBox1.Name = "simpleLogTextBox1";
+            simpleLogTextBox1.Size = new Size(774, 148);
+            simpleLogTextBox1.TabIndex = 0;
+            simpleLogTextBox1.AutoPurge = true;
+            simpleLogTextBox1.AutoPurgeTime = 1;
             // 
             // txtLog
             // 
-            this.txtLog.Location = new System.Drawing.Point(32, 19);
-            this.txtLog.Name = "txtLog";
-            this.txtLog.Size = new System.Drawing.Size(580, 23);
-            this.txtLog.TabIndex = 1;
+            txtLog.Location = new Point(32, 19);
+            txtLog.Name = "txtLog";
+            txtLog.Size = new Size(580, 23);
+            txtLog.TabIndex = 1;
             // 
             // btnWriteLog
             // 
-            this.btnWriteLog.Location = new System.Drawing.Point(618, 18);
-            this.btnWriteLog.Name = "btnWriteLog";
-            this.btnWriteLog.Size = new System.Drawing.Size(169, 23);
-            this.btnWriteLog.TabIndex = 2;
-            this.btnWriteLog.Text = "Write Log";
-            this.btnWriteLog.UseVisualStyleBackColor = true;
-            this.btnWriteLog.Click += new System.EventHandler(this.btnWriteLog_Click);
+            btnWriteLog.Location = new Point(618, 18);
+            btnWriteLog.Name = "btnWriteLog";
+            btnWriteLog.Size = new Size(169, 23);
+            btnWriteLog.TabIndex = 2;
+            btnWriteLog.Text = "Write Log";
+            btnWriteLog.UseVisualStyleBackColor = true;
+            btnWriteLog.Click += btnWriteLog_Click;
             // 
             // jsonLogTextBox1
             // 
-            this.jsonLogTextBox1.ForContext = "";
-            this.jsonLogTextBox1.Location = new System.Drawing.Point(13, 242);
-            this.jsonLogTextBox1.LogBorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.jsonLogTextBox1.LogPadding = new System.Windows.Forms.Padding(3);
-            this.jsonLogTextBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.jsonLogTextBox1.Name = "jsonLogTextBox1";
-            this.jsonLogTextBox1.ReadOnly = false;
-            this.jsonLogTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.jsonLogTextBox1.Size = new System.Drawing.Size(774, 210);
-            this.jsonLogTextBox1.TabIndex = 3;
+            jsonLogTextBox1.Location = new Point(13, 242);
+            jsonLogTextBox1.Margin = new Padding(4, 3, 4, 3);
+            jsonLogTextBox1.Name = "jsonLogTextBox1";
+            jsonLogTextBox1.Size = new Size(774, 210);
+            jsonLogTextBox1.TabIndex = 3;
             // 
             // richTextBoxLogControl1
             // 
-            this.richTextBoxLogControl1.ForContext = "";
-            this.richTextBoxLogControl1.Location = new System.Drawing.Point(13, 469);
-            this.richTextBoxLogControl1.Name = "richTextBoxLogControl1";
-            this.richTextBoxLogControl1.Size = new System.Drawing.Size(774, 164);
-            this.richTextBoxLogControl1.TabIndex = 4;
-            this.richTextBoxLogControl1.Text = "";
+            richTextBoxLogControl1.Location = new Point(13, 469);
+            richTextBoxLogControl1.Name = "richTextBoxLogControl1";
+            richTextBoxLogControl1.Size = new Size(774, 164);
+            richTextBoxLogControl1.TabIndex = 4;
+            richTextBoxLogControl1.Text = "";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1015, 658);
-            this.Controls.Add(this.richTextBoxLogControl1);
-            this.Controls.Add(this.jsonLogTextBox1);
-            this.Controls.Add(this.btnWriteLog);
-            this.Controls.Add(this.txtLog);
-            this.Controls.Add(this.simpleLogTextBox1);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1015, 658);
+            Controls.Add(richTextBoxLogControl1);
+            Controls.Add(jsonLogTextBox1);
+            Controls.Add(btnWriteLog);
+            Controls.Add(txtLog);
+            Controls.Add(simpleLogTextBox1);
+            Name = "Form1";
+            Text = "Form1";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

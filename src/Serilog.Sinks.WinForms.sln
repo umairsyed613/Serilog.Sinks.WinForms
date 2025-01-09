@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Serilog.Sinks.WinForms.Core
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Serilog.Sinks.WinForms.Base", "Serilog.Sinks.WinForms.Base\Serilog.Sinks.WinForms.Base.csproj", "{CCB237EE-BC54-435F-A0F2-0C13CBCF6E06}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApplicationNet6", "Sample\TestApplicationNet6\TestApplicationNet6.csproj", "{13CBCDA2-8B30-4F01-AAB1-6D749DD77B67}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApplicationNet9", "Sample\TestApplicationNet6\TestApplicationNet9.csproj", "{13CBCDA2-8B30-4F01-AAB1-6D749DD77B67}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

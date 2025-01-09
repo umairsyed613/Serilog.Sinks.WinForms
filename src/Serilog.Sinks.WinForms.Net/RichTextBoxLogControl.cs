@@ -1,12 +1,17 @@
 ﻿using Serilog.Sinks.WinForms.Base;
 using System;
+using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace Serilog.Sinks.WinForms
 {
     public partial class RichTextBoxLogControl : RichTextBox
     {
-        public string ForContext { get; set; } = string.Empty;
+        [Category("Serilog Sink WinForms")] public string ForContext { get; set; } = string.Empty;
+        [Category("Serilog Sink WinForms")] public bool AutoPurge { get; set; }
+        [Category("Serilog Sink WinForms")] public double AutoPurgeTime { get; set; } = 60;
+
+        private Timer _timer;
 
         public RichTextBoxLogControl()
         {
@@ -18,6 +23,21 @@ namespace Serilog.Sinks.WinForms
             {
                 WindFormsSink.SimpleTextBoxSink.OnLogReceived -= SimpleTextBoxSinkOnLogReceived;
             };
+
+            if (AutoPurge)
+            {
+                _timer = new Timer
+                {
+                    Interval = Convert.ToInt32(TimeSpan.FromMinutes(AutoPurgeTime).TotalMilliseconds)
+                };
+                _timer.Tick += _timer_Tick;
+                _timer.Start();
+            }
+        }
+
+        private void _timer_Tick(object sender, EventArgs e)
+        {
+            ClearLogs();
         }
 
         private void SimpleTextBoxSinkOnLogReceived(string context, string str)
