@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
 using Serilog;
 using Serilog.Sinks.WinForms.Base;
 
@@ -20,7 +16,7 @@ namespace CustomSimpleTextLog
             Log.Logger = new LoggerConfiguration()
                         .WriteToSimpleAndRichTextBox()
                         .CreateLogger();
-            
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());

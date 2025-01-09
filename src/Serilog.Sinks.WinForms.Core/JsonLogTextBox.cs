@@ -1,17 +1,22 @@
-﻿using Serilog.Sinks.WinForms.Base;
+﻿using System.ComponentModel;
+using Serilog.Sinks.WinForms.Base;
 
 namespace Serilog.Sinks.WinForms.Core
 {
     public partial class JsonLogTextBox : UserControl
     {
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
         public ScrollBars ScrollBars { get; set; }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
         public Padding LogPadding { get; set; } = new Padding(3, 3, 3, 3);
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
         public bool ReadOnly { get; set; }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
         public BorderStyle LogBorderStyle { get; set; } = BorderStyle.Fixed3D;
-
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
         public string ForContext { get; set; } = string.Empty;
 
         private bool _isContextConfigured = false;

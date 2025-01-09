@@ -1,9 +1,11 @@
-﻿using Serilog.Sinks.WinForms.Base;
+﻿using System.ComponentModel;
+using Serilog.Sinks.WinForms.Base;
 
 namespace Serilog.Sinks.WinForms.Core
 {
     public partial class TransparentSimpleLogTextBox : TextBox
     {
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
         public string ForContext { get; set; } = string.Empty;
         private bool _isContextConfigured = false;
 
