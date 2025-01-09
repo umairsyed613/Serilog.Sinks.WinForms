@@ -1,11 +1,21 @@
-﻿using Serilog.Sinks.WinForms.Base;
+﻿using System.ComponentModel;
+using Serilog.Sinks.WinForms.Base;
 
 namespace Serilog.Sinks.WinForms.Core
 {
     public partial class TransparentSimpleLogTextBox : TextBox
     {
-        public string ForContext { get; set; } = string.Empty;
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        [Category("Serilog Sink WinForms")] public string ForContext { get; set; } = string.Empty;
+
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        [Category("Serilog Sink WinForms")] public bool AutoPurge { get; set; }
+
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        [Category("Serilog Sink WinForms")] public double AutoPurgeTime { get; set; } = 60;
+
         private bool _isContextConfigured = false;
+        private System.Windows.Forms.Timer _timer;
 
         public TransparentSimpleLogTextBox()
         {
@@ -20,12 +30,27 @@ namespace Serilog.Sinks.WinForms.Core
             BackColor = Color.Transparent;
             WindFormsSink.SimpleTextBoxSink.OnLogReceived += SimpleTextBoxSinkOnLogReceived;
 
-            HandleDestroyed += ( handler, args ) =>
+            HandleDestroyed += (handler, args) =>
             {
                 WindFormsSink.SimpleTextBoxSink.OnLogReceived -= SimpleTextBoxSinkOnLogReceived;
             };
 
             this.Multiline = true;
+
+            if (AutoPurge)
+            {
+                _timer = new System.Windows.Forms.Timer
+                {
+                    Interval = Convert.ToInt32(TimeSpan.FromMinutes(AutoPurgeTime).TotalMilliseconds)
+                };
+                _timer.Tick += _timer_Tick;
+                _timer.Start();
+            }
+        }
+
+        private void _timer_Tick(object sender, EventArgs e)
+        {
+            ClearLogs();
         }
 
         private void SimpleTextBoxSinkOnLogReceived(string context, string str)
@@ -49,7 +74,7 @@ namespace Serilog.Sinks.WinForms.Core
             if (this.InvokeRequired)
             {
                 this.Invoke(
-                    (MethodInvoker) delegate
+                    (MethodInvoker)delegate
                     {
                         this.AppendText(str);
                         this.ScrollToCaret();

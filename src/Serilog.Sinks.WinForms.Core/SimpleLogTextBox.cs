@@ -1,4 +1,5 @@
-﻿using Serilog.Sinks.WinForms.Base;
+﻿using System.ComponentModel;
+using Serilog.Sinks.WinForms.Base;
 
 namespace Serilog.Sinks.WinForms.Core
 {
@@ -6,16 +7,28 @@ namespace Serilog.Sinks.WinForms.Core
     {
         private bool _isContextConfigured = false;
 
-        public ScrollBars ScrollBars { get; set; }
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        [Category("Serilog Sink WinForms")] public ScrollBars ScrollBars { get; set; }
 
-        public Padding LogPadding { get; set; } = new Padding(3, 3, 3, 3);
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        [Category("Serilog Sink WinForms")] public Padding LogPadding { get; set; } = new Padding(3, 3, 3, 3);
 
-        public bool ReadOnly { get; set; }
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        [Category("Serilog Sink WinForms")] public bool ReadOnly { get; set; }
 
-        public string ForContext { get; set; } = string.Empty;
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        [Category("Serilog Sink WinForms")] public string ForContext { get; set; } = string.Empty;
 
-        public BorderStyle LogBorderStyle { get; set; } = BorderStyle.Fixed3D;
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        [Category("Serilog Sink WinForms")] public BorderStyle LogBorderStyle { get; set; } = BorderStyle.Fixed3D;
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        [Category("Serilog Sink WinForms")] public bool AutoPurge { get; set; }
+
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        [Category("Serilog Sink WinForms")] public double AutoPurgeTime { get; set; } = 60;
+
+        private System.Windows.Forms.Timer _timer = default!;
 
         public SimpleLogTextBox()
         {
@@ -35,10 +48,25 @@ namespace Serilog.Sinks.WinForms.Core
 
             WindFormsSink.SimpleTextBoxSink.OnLogReceived += SimpleTextBoxSinkOnLogReceived;
 
-            HandleDestroyed += ( handler, args ) =>
+            HandleDestroyed += (handler, args) =>
             {
                 WindFormsSink.SimpleTextBoxSink.OnLogReceived -= SimpleTextBoxSinkOnLogReceived;
             };
+
+            if (AutoPurge)
+            {
+                _timer = new System.Windows.Forms.Timer
+                {
+                    Interval = Convert.ToInt32(TimeSpan.FromMinutes(AutoPurgeTime).TotalMilliseconds)
+                };
+                _timer.Tick += _timer_Tick;
+                _timer.Start();
+            }
+        }
+
+        private void _timer_Tick(object sender, EventArgs e)
+        {
+            ClearLogs();
         }
 
         private void SimpleTextBoxSinkOnLogReceived(string context, string str)

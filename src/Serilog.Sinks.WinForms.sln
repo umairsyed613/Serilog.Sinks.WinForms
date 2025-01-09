@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Serilog.Sinks.WinForms.Core
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Serilog.Sinks.WinForms.Base", "Serilog.Sinks.WinForms.Base\Serilog.Sinks.WinForms.Base.csproj", "{CCB237EE-BC54-435F-A0F2-0C13CBCF6E06}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApplicationNet6", "Sample\TestApplicationNet6\TestApplicationNet6.csproj", "{13CBCDA2-8B30-4F01-AAB1-6D749DD77B67}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApplicationNet9", "Sample\TestApplicationNet6\TestApplicationNet9.csproj", "{13CBCDA2-8B30-4F01-AAB1-6D749DD77B67}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,8 +25,8 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E6E8355A-DC58-45B7-BBD3-8132610F5EBF}.Debug|Any CPU.ActiveCfg = Release|Any CPU
-		{E6E8355A-DC58-45B7-BBD3-8132610F5EBF}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{E6E8355A-DC58-45B7-BBD3-8132610F5EBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6E8355A-DC58-45B7-BBD3-8132610F5EBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6E8355A-DC58-45B7-BBD3-8132610F5EBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6E8355A-DC58-45B7-BBD3-8132610F5EBF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9128AF8C-2E4B-486E-AEF2-F48DE2F61B09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -41,12 +41,12 @@ Global
 		{151559CF-E59E-4CC1-8CDB-FF56882F9035}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{151559CF-E59E-4CC1-8CDB-FF56882F9035}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{151559CF-E59E-4CC1-8CDB-FF56882F9035}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B1CC4152-652E-42FE-87D3-E9BC5AC5BB7C}.Debug|Any CPU.ActiveCfg = Release|Any CPU
-		{B1CC4152-652E-42FE-87D3-E9BC5AC5BB7C}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{B1CC4152-652E-42FE-87D3-E9BC5AC5BB7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1CC4152-652E-42FE-87D3-E9BC5AC5BB7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1CC4152-652E-42FE-87D3-E9BC5AC5BB7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1CC4152-652E-42FE-87D3-E9BC5AC5BB7C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CCB237EE-BC54-435F-A0F2-0C13CBCF6E06}.Debug|Any CPU.ActiveCfg = Release|Any CPU
-		{CCB237EE-BC54-435F-A0F2-0C13CBCF6E06}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{CCB237EE-BC54-435F-A0F2-0C13CBCF6E06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCB237EE-BC54-435F-A0F2-0C13CBCF6E06}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCB237EE-BC54-435F-A0F2-0C13CBCF6E06}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CCB237EE-BC54-435F-A0F2-0C13CBCF6E06}.Release|Any CPU.Build.0 = Release|Any CPU
 		{13CBCDA2-8B30-4F01-AAB1-6D749DD77B67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU

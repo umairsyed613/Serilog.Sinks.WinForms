@@ -89,6 +89,8 @@
             // 
             // simpleLogTextBox1
             // 
+            this.simpleLogTextBox1.AutoPurge = true;
+            this.simpleLogTextBox1.AutoPurgeTime = 1D;
             this.simpleLogTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleLogTextBox1.ForContext = "";
             this.simpleLogTextBox1.Location = new System.Drawing.Point(16, 44);
