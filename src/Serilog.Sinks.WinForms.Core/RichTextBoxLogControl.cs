@@ -61,17 +61,22 @@ namespace Serilog.Sinks.WinForms.Core
         {
             if (this.InvokeRequired)
             {
-                this.Invoke((MethodInvoker)delegate
-                {
-                    this.AppendText(str);
-                    this.ScrollToCaret();
-                });
+                this.Invoke((MethodInvoker)delegate { PrintText(str); });
+                return;
             }
+
+            // Detect log level in the string
+            string lower = str.ToLowerInvariant();
+            if (lower.Contains("error"))
+                this.SelectionColor = System.Drawing.Color.Red;
+            else if (lower.Contains("warning"))
+                this.SelectionColor = System.Drawing.Color.Orange;
             else
-            {
-                this.AppendText(str);
-                this.ScrollToCaret();
-            }
+                this.SelectionColor = this.ForeColor;
+
+            this.AppendText(str);
+            this.ScrollToCaret();
+            this.SelectionColor = this.ForeColor; // Reset color
         }
 
         public void ClearLogs()
